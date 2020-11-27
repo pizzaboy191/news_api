@@ -1,0 +1,41 @@
+<div class="homepage-banner" style="background-image: url(https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+    <h1 class="">FIND GOOD NEWS and GOOD VIBES</h1>
+    <p>Powered by The Guardian</p>
+</div>
+<div class="container">
+    <div class="slide">
+        <%= simple_form_for :article_search do |f| %>
+        <%= f.input :search, label: false, :required => false, class:'search-box' %>
+        <%= f.button :submit, "Find News", class:'btn button'%>
+        <% end %>
+    </div>
+    <% if @results %>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <% count = 1 %>
+                <% @result_hash.each do |key, value| %>
+                <th scope="row">
+                    <%= count %>
+                </th>
+                <td>
+                    <%= link_to "#{key}", "#{value}", :target => "_blank" %>
+                </td>
+            </tr>
+            <% count += 1 %>
+            <% end %>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+    <% end %>
+</div>
+<div class="footer">
+    <h5>Created by Stewart with love <3 </h5>
+</div>

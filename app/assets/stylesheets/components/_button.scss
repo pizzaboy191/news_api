@@ -1,0 +1,20 @@
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid #0B2128;
+  margin: 16px 16px 16px 16px;
+  color: #0B2128;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #0B2128;
+  color: white;
+}
